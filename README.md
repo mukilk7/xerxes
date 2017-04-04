@@ -25,3 +25,4 @@ Please ensure that both of these files are in the same location in each worker n
 * Python
 * NumPy for Python
 
+3. For more details on how Xerxes can be used to generate CPU and memory load across a cluster of machines, please refer to the user guide and paper in the `docs` section.
