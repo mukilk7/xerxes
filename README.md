@@ -3,7 +3,6 @@
 Xerxes is a distributed load generation framework that can generate desired CPU and memory consumption patterns across a large number of machines. It is organized as a collection of individual load generators, one per machine, coordinated via a master node. It can be used to replay traces from datacenter machines, generate loads fitting statistical distributions and generate resource usage spikes, all at varying scales. The accuracy of aggregate resource consumption patterns decays gradually in line with the rate of experimentation node failures. This lets datacenter/cluster administrators and researchers achieve highly scalable load testing without having to deal with application logic specific nuances.
 
 <p align="center"> <img src="docs/xerxes-architecture.png" width="300"> </p>
-#![architecture](docs/xerxes-architecture.png)
 
 ## Installation
 
