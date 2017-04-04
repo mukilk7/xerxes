@@ -8,8 +8,8 @@ Xerxes is a distributed load generation framework that can generate desired CPU 
 
 1. Worker nodes need to be installed with the following items from the benchmark tarball:
 
-`<xerxesroot>/loadgen/wileE
-<xerxesroot>/master/launcher/setupcron.sh`
+* `<xerxesroot>/loadgen/wileE`
+* `<xerxesroot>/master/launcher/setupcron.sh`
 
 Please ensure that both of these files are in the same location in each worker node. To generate the `wileE` binary, just navigate to `<xerxesroot>/loadgen/` and hit `make`. For specifics on how to use shipfiles.py please refer to the next section.
 
