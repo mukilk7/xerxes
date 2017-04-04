@@ -1,0 +1,27 @@
+== FILES ==
+
+1. generator.py
+
+Main script that generates worker nodes' load specification files from
+global load specification parameters specified in loadspec.conf.
+
+2. loadspec.conf
+
+Global load specification parameters. Each parameter in the file has a
+comment line above it explaining it.
+
+---
+
+Workflow:
+
+1. Configure loadspec.conf for generating worker node load specs from
+either (i) datacenter machine resource usage traces or (ii)
+statistical distributions. Please do not enable both at the same time.
+
+2. Configure "spike" section if required.
+
+3. Run generator.py with loadspec.conf as input.
+
+4. Each individual node's load spec file will be generated as
+"node<num>.dat" in the specified output folder.
+

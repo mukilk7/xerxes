@@ -1,0 +1,57 @@
+-------------------------------------------------------------------------------
+ Description:
+-------------------------------------------------------------------------------
+
+This is a CPU load generator and a memory allocator benchmark. Over
+user specified time intervals, it generates (a) desired percentage 
+of CPU usage and (b) allocates a desired fraction of system memory 
+and "touches" it.
+
+-------------------------------------------------------------------------------
+ Options:
+-------------------------------------------------------------------------------
+
+
+	-l, --loop_length
+		Specifies the smallest loop length in microseconds in which to
+      achieve desired cpu utilization.
+
+    -f <filename>
+
+       Format of file entries:
+
+       <time-in-secs>\t<cpu-load-percent>\t<system-memory-alloc-pct>
+
+       WileE generates cpuload of specified value for specified amount
+       of time. It also mallocs specified fraction of system memory 
+       and "touches" it so its all allocated. You can specify multiple 
+       such lines and the benchmark just goes on simulating one case after the
+       other. 
+
+    -t <num_threads>
+       For multi-core machines.
+
+	--recalibrate
+		CPU calibration computes the number of loops required to
+		obtain 100% CPU usage. By default, this is performed once at the
+		start of the program. Pass this option to recalibrate
+		periodically. This is useful in virtualized environments where
+        the amount of CPU available to a VM varies with consolidation
+        ratios.
+	
+-------------------------------------------------------------------------------
+ Examples:
+-------------------------------------------------------------------------------
+
+./wileE -l 1000000 -f jobfile.csv -t 1
+
+./wileE -l 1000000 -f jobfile.csv -t 2 --recalibrate
+
+NOTE: You need to specify the "-t" option always. 
+
+-------------------------------------------------------------------------------
+ Calibration Tips:
+-------------------------------------------------------------------------------
+1. In order for the CPU loop calibration to work properly, ensure that
+   the CPU is running at maximum frequency and set the governor to
+   "performance" if necessary.

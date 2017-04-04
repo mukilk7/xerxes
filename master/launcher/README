@@ -1,0 +1,33 @@
+== FILES ==
+
+1. shipfiles.py
+
+Ships files and folders in parallel to nodes specified in a hostfile, to the
+desired location. It can also be used to ship load specification files
+to worker nodes. IF used in this mode it will use the node logical
+number information from the host file to ship to each node the load
+spec file pertaining to that node. Note that the load spec file
+destination path in the remote node has to be the same location where
+the setupcron.sh script and the wileE load generation benchmark were
+installed.
+
+2. shipspecs.conf
+
+Configuration parameters for shipfiles.py. Each parameter has a
+comment line on top of it explaining it. Customize this and pass as
+input to shipfiles.py.
+
+3. launch.py
+
+ssh's into worker nodes and uses the setupcron.sh script to setup
+local load generation at a specific time. All nodes will start at the
+same time as long as NTP has been setup to sync with the master
+(out-of-band). It also gives you the ability to stop each node's load
+generation at a specific time if you don't want it to work through
+each line in the load spec file till the end.
+
+4. launchspec.conf
+
+Configuration parameters for launch.py. Each parameter has a
+comment line on top of it explaining it. Customize this and pass as
+input to launch.py.
